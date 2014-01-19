@@ -1,0 +1,10 @@
+/*
+ * LESS CSS Mixins
+ * @author: basecss
+ * @see: https://github.com/basecss/zo-less
+ */
+@font-face {
+  font-family: 'testFontName';
+  src: url('/fonts/testFontName.eot');
+  src: url('/fonts/testFontName.eot?#iefix') format('embedded-opentype'), url('/fonts/testFontName.woff') format('woff'), url('/fonts/testFontName.ttf') format('truetype'), url('/fonts/testFontName.svg#testFontName') format('svg');
+}
