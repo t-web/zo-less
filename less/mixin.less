@@ -1,1 +1,90 @@
-/* 部分 CSS3 属性抛弃前缀 */
+/*
+ * LESS CSS Mixins
+ * @author: basecss
+ * @see: https://github.com/basecss/zo-less
+ */
+
+// ====================================================
+// filter
+// @see: https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html
+// @see: http://caniuse.com/#feat=css-filters
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+// @see: http://www.qianduan.net/what-is-webkit-filter.html
+// @see: http://bennettfeely.com/filters/
+// @see: http://www.html5rocks.com/en/tutorials/filters/understanding-css/
+// ====================================================
+// options:
+// grayscale(<number> | <percentage>)
+// sepia(<number> | <percentage>)
+// saturate(<number> | <percentage>)
+// hue-rotate(<angle>)
+// invert(<number> | <percentage>)
+// opacity(<number> | <percentage>)
+// brightness(<number> | <percentage>)
+// contrast(<number> | <percentage>)
+// blur(<length>)
+// drop-shadow(<shadow>)
+// ====================================================
+.filter(@arguments) {
+	-webkit-filter: @arguments; /* Chrome 18.0, Safari */
+	-moz-filter: @arguments;
+	-ms-filter: @arguments;
+	-o-filter: @arguments; /* Opera 17.0 */
+	filter: @arguments; /* Standard */
+}
+// Example:
+// .filter(blur(10px));
+// .filter(drop-shadow(rgba(0,0,0,0.3) 1px 1px 1px));
+
+// ====================================================
+// gradient
+// @see: http://dev.w3.org/csswg/css3-images/#linear-gradients
+// @see: http://caniuse.com/#feat=css-gradients
+// @see: http://caniuse.com/#feat=css-repeating-gradients
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+// @see: http://www.colorzilla.com/gradient-editor/
+// ====================================================
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	/* old syntax */
+	background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+	/* Chrome and Safari */
+	background-image: -moz-linear-gradient(top, @startColor, @endColor);
+	/* FireFox 3.6 to 15 */
+	background-image: -ms-linear-gradient(top, @startColor, @endColor);
+	/* IE10 + */
+	background-image: -o-linear-gradient(top, @startColor, @endColor);
+	/* Opera 11.1 to 12.0 */
+	background-image: linear-gradient(to bottom, @startColor, @endColor);
+	/* Standard */
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+	background-image: -moz-linear-gradient(left, @startColor, @endColor);
+	background-image: -ms-linear-gradient(left, @startColor, @endColor);
+	background-image: -o-linear-gradient(left, @startColor, @endColor);
+	background-image: linear-gradient(left, @startColor, @endColor);
+}
+// Example:
+// .gradient(#09f, #c00);
+// .horizontal-gradient(#09f, #c00);
+
+// ====================================================
+// border-radius
+// @see: http://www.w3.org/TR/css3-background/#the-border-radius
+// @see: http://caniuse.com/#search=border-radius
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/Tools/Border-radius_generator
+// ====================================================
+.border-radius(@radius: 0) {
+	-webkit-border-radius: @radius; /* Safari 3 to 4 */
+	-moz-border-radius: @radius; /* FireFox 4- */
+	border-radius: @radius; /* Standard */
+}
+// Example:
+// .border-radius(3px);
+
+
