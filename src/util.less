@@ -1,0 +1,108 @@
+// clearfix - 闭合浮动
+// @see: http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+.clearfix() when (@support-ie7 = true) {
+	.@{ie7-class} & {
+		zoom: 1;
+	}
+}
+// inline-block
+// 使用 inline-block 时注意清除空隙，需处理外层容器
+/*
+.parent {
+	font-size: 0;
+	*word-spacing: -1px; // IE6/7
+}
+@media (-webkit-min-device-pixel-ratio:0) {
+	.parent {
+		letter-spacing: -5px; // Safari 5- 等不支持 font-size: 0 的浏览器
+    }
+}
+.parent .inline-block {
+    vertical-align: top;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: initial;
+}
+*/
+.inline-block() {
+	display: inline-block;
+}
+.inline-block() when(@support-ie7 = true) {
+	.@{ie7-class} & {
+		display: inline;
+		zoom: 1;
+	}
+}
+// Opacity
+.opacity(@opacity) {
+	opacity: (@opacity/100);
+}
+.opacity(@opacity) when(@support-ie8 = true) {
+	.@{ie8-class} & {
+		filter: ~"alpha(opacity=@{opacity})";
+	}
+}
+// 强制不换行
+.text-nowrap() {
+	white-space: nowrap;
+	word-wrap: normal;
+}
+// 连续字符换行
+.text-wrap() {
+	white-space: normal;
+	word-wrap: word-break;
+}
+// 隐藏元素
+.hidden() {
+	display: none;
+}
+// 文本溢出显示省略号
+.text-ellipsis() {
+	display: block;
+	white-space: nowrap;
+	word-wrap: normal;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	/*word-break: break-all;*/
+	overflow: hidden;
+	text-align: left;
+}
+// 隐藏文本
+.text-hide() {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+// 响应式图片
+.img-responsive(@display: inline-block) {
+	display: @display;
+	max-width: 100%;
+	height: auto;
+}
+// OS X webfont 优化
+.font-antialiased() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; 
+}
+// 块元素居中
+.block-center() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+// 人民币符号统一
+.rmb() {
+	font-family: arial;
+	font-style: normal;
+}
