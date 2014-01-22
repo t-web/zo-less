@@ -58,7 +58,7 @@
 	/* Standard */
 }
 .horizontal-gradient (@startColor: #eee, @endColor: white) {
- 	background-color: @startColor;
+	background-color: @startColor;
 	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
 	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
 	background-image: -moz-linear-gradient(left, @startColor, @endColor);
@@ -476,22 +476,15 @@
 	-o-animation-fill-mode: @arguments;
 	animation-fill-mode: @arguments;
 }
-
-/* useful */
-.ellipsis(@width: 100%) {
-	width: @width;
-    white-space: nowrap;
-    word-wrap: normal;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    overflow: hidden;
-}
-.img-responsive(@display: inline-block) {
-	display: @display;
-	max-width: 100%;
-	height: auto;
-}
-.box-center() {
-	margin-left: auto;
-	margin-right: auto;
+// ====================================================
+// columns
+// @see: http://www.w3.org/TR/css3-multicol/
+// ====================================================
+.columns(@columnCount: 1, @columnGap: 1) {
+	-webkit-column-count: @columnCount;
+	-moz-column-count: @columnCount;
+	column-count: @columnCount;
+	-webkit-column-gap: @columnGap;
+	-moz-column-gap: @columnGap;
+	column-gap: @columnGap;
 }
