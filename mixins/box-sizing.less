@@ -2,8 +2,11 @@
 // @see: http://www.w3.org/TR/css3-ui/#box-sizing
 
 .box-sizing(@arg: inherit) {
-	-webkit-box-sizing: @arg; /* Chrome 1.0 to 9.0, Safari 3.1 to 5.0 */
-	-moz-box-sizing: @arg; /* FireFox 1.0 */
-	-ms-box-sizing: @arg; /* IE8+ */
-	box-sizing: @arg; /* Standard */
+	// Chrome 1.0 to 9.0, Safari 3.1 to 5.0
+	-webkit-box-sizing: @arg;
+	// FireFox 1.0
+	-moz-box-sizing: @arg;
+	// IE8+
+	-ms-box-sizing: @arg;
+	box-sizing: @arg;
 }
