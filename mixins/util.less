@@ -1,0 +1,56 @@
+// 常用工具方法，不涉及变量依赖
+
+// 隐藏元素
+.hide() {
+	display: none;
+}
+
+// 强制字符不换行
+.text-nowrap {
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+// 连续字符换行
+.text-wrap {
+	white-space: normal;
+	word-wrap: word-break;
+}
+
+// 文本溢出显示省略号
+.text-ellipsis() {
+	display: block;
+	white-space: nowrap;
+	word-wrap: normal;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	/*word-break: break-all;*/
+	overflow: hidden;
+	text-align: left;
+}
+
+// 隐藏文本
+.text-hide() {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// OS X webfont 优化
+.font-antialiased() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; 
+}
+
+// 块元素居中
+.block-center() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// 人民币符号统一
+.rmb() {
+	font-family: arial;
+	font-style: normal;
+}

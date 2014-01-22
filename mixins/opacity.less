@@ -1,0 +1,13 @@
+// opacity
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
+
+.opacity(@opacity: 100) {
+	opacity: (opacity/100);
+}
+
+.opacity(@opacity) when(@support-ie7 = true) {
+	.@{ie7-class} & {
+		filter: ~"alpha(opacity=@{opacity})"; // IE8 及更低版本浏览器
+		zoom: 1; // 触发 IE7 及更低版本浏览器的 hasLayout
+	}
+}

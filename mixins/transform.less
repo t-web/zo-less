@@ -1,0 +1,96 @@
+// transform
+// @see: http://www.w3.org/TR/css3-2d-transforms/
+
+.transform(...) {
+	-webkit-transform: @arguments;
+	-moz-transform: @arguments;
+	-ms-transform: @arguments;
+	-o-transform: @arguments;
+}
+
+// @see: http://www.w3.org/TR/css3-3d-transforms/#transform-origin-property
+
+.transform-origin(...) {
+	-webkit-transform-origin: @arguments;
+	-moz-transform-origin: @arguments;
+	-ms-transform-origin: @arguments;
+	-o-transform-origin: @arguments;
+	transform-origin: @arguments;
+}
+
+// @see: http://www.w3.org/TR/css3-3d-transforms/#transform-style-property
+
+.transform-style(...) {
+	-webkit-transform-style: @arguments;
+	-moz-transform-style: @arguments;
+	-ms-transform-style: @arguments;
+	-o-transform-style: @arguments;
+	transform-style: @arguments;
+}
+
+// @see: http://www.w3.org/TR/css3-3d-transforms/#perspective-property
+
+.perspective(...) {
+	-webkit-perspective: @arguments;
+	-moz-perspective: @arguments;
+	-ms-perspective: @arguments;
+	-o-perspective: @arguments;
+	perspective: @arguments;
+}
+
+// @see: http://www.w3.org/TR/css3-3d-transforms/#perspective-origin-property
+
+.perspective-origin(...) {
+	-webkit-perspective-origin: @arguments;
+	-moz-perspective-origin: @arguments;
+	-ms-perspective-origin: @arguments;
+	-o-perspective-origin: @arguments;
+	perspective-origin: @arguments;
+}
+
+// @see: http://www.w3.org/TR/css3-3d-transforms/#transform-functions
+// transform-function
+
+.matrix(...) {
+	-webkit-transform: matrix(@arguments);
+	-moz-transform: matrix(@arguments);
+	-ms-transform: matrix(@arguments);
+	-o-transform: matrix(@arguments);
+	transform: matrix(@arguments);
+}
+
+.translate2d(@x:0,@y:0) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+.translate3d (@x: 0, @y: 0, @z: 0) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	-moz-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+	-o-transform: translate3d(@x, @y, @z);
+}
+
+.transform-scale (@factor: 1) {
+	-webkit-transform: scale(@factor);
+	-moz-transform: scale(@factor);
+	-ms-transform: scale(@factor);
+	-o-transform: scale(@factor);
+}
+
+.transform-rotate (@deg: 0deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+}
+
+.transform-skew (@deg: 0deg, @deg2: 0deg) {
+	-webkit-transform: skew(@deg, @deg2);
+	-moz-transform: skew(@deg, @deg2);
+	-ms-transform: skew(@deg, @deg2);
+	-o-transform: skew(@deg, @deg2);
+}

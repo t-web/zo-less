@@ -1,0 +1,11 @@
+// columns
+// @see: http://www.w3.org/TR/css3-multicol/
+
+.columns(@columnCount: 1, @columnGap: 1) {
+	-webkit-column-count: @columnCount;
+	-moz-column-count: @columnCount;
+	column-count: @columnCount;
+	-webkit-column-gap: @columnGap;
+	-moz-column-gap: @columnGap;
+	column-gap: @columnGap;
+}
