@@ -1,6 +1,8 @@
 // gradient
 // @see: http://dev.w3.org/csswg/css3-images/#linear-gradients
+// @see: https://developer.mozilla.org/en-US/docs/Web/CSS/gradient
 
+// 线性渐变 - 由上至下
 .gradient (@startColor: #eee, @endColor: white) {
 	background-color: @startColor;
 	// old syntax
@@ -16,6 +18,7 @@
 	background-image: linear-gradient(to bottom, @startColor, @endColor);
 }
 
+// 线性渐变 - 从左至右
 .horizontal-gradient (@startColor: #eee, @endColor: white) {
 	background-color: @startColor;
 	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
@@ -26,6 +29,7 @@
 	background-image: linear-gradient(left, @startColor, @endColor);
 }
 
+// 径向渐变 - 由内至外
 .radial-gradient(...) {
 	background-image: -webkit-radial-gradient(@arguments);
 	background-image: -moz-radial-gradient(@arguments);
