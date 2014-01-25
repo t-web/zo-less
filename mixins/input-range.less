@@ -1,0 +1,53 @@
+// input range
+// @see: http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#range-state-(type=range)
+
+.input-range(@width: 100%, @height: 16px, @radius: 8px, @backgroud: #eee, @selectColor: #7ed43f) {
+	input[type=range] {
+		margin: 0;
+		padding: 0;
+		width: @width;
+		height: @height;
+		border-radius: @radius;
+		background-color: @backgroud;
+		background-image: -webkit-linear-gradient(left, @selectColor, @selectColor);
+		background-image: -moz-linear-gradient(left, @selectColor, @selectColor);
+		background-image: -o-linear-gradient(left, @selectColor, @selectColor);
+		background-repeat: no-repeat;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: 0 none;
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 0;
+			height: 0;
+			background-color: @selectColor;
+			border-radius: 100%;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+			cursor: pointer;
+			overflow: hidden;
+			padding: 6px;
+			border: 7px solid #FFF;
+		}
+		&::-moz-range-thumb {
+			-moz-appearance: none;
+			appearance: none;
+			width: 0;
+			height: 0;
+			background: @selectColor;
+			border-radius: 100%;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+			cursor: pointer;
+			overflow: hidden;
+			padding: 6px;
+			border: 7px solid #FFF;
+		}
+		&::-moz-range-track {
+			border: 0 none;
+			height: @height;
+			background-color: transparent;
+			border-radius: 8px;
+		}
+	}
+}
